@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>RESTOLIST</h1>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+    <li> <%= link_to(raw("<span> #{restaurant.name} (#{restaurant.category}) </span>"), restaurant_path(restaurant)) %>  </li>
+    <% end %>
+  </ul>
+  <div>
+    <%= link_to "create new", new_restaurant_path, class: "btn btn-primary" %>
+  </div>
+</div>
